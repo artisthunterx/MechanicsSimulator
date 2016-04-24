@@ -1,0 +1,48 @@
+body {/*font throughout the game*/
+	font-family: sans-serif;
+}
+
+canvas {
+    /* the border to be defined as 2 pixels so as to distiguish the different canvases*/
+	border: 1px solid #666;
+}
+#Mytitle{/*color and text font change of the main title*/
+    text-decoration-color: #FF0000
+        font-family: arial;
+}
+#start-button {
+    	/*setting the image to be sourced and used from folder graphics
+	determining the witdth, height and preset image  that will be changed when the hovered on
+	alsos defining it */
+	width: 200px;
+	height: 60px;
+	background-image: url(graphics/unpressed.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+/*when mouse hover occurs the image is changed to be sourced from pressed in folder graphics */ 
+#start-button:hover {
+	background-image: url(graphics/pressed.png);
+}
+/* all the vehicles and backdrops are just images to be clicked */
+#vehicle-1, #vehicle-2, #vehicle-3, #vehicle-4,
+#backdrop-1, #backdrop-2, #backdrop-3, #backdrop-4 {
+	cursor: pointer;
+}
+/*create a box for questions and answers with text starting from the left*/
+.question-diagram, .question-text {
+	width: 400px;
+	float: left;
+	margin: 5px;
+}
+
+.timer {
+    /*timer element of html to be used in the top corner of the program*/
+	float: left;
+	float: left;
+}
+
+.play-pause {
+    /*play to pause button*/
+	float: right;
+}

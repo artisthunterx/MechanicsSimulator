@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Game</title>
+        <!-- sourcing scripts from folder and identifying there code-->
+		<script type="text/javascript" src="screens/start-screen.js"></script>
+		<script type="text/javascript" src="screens/vehicle-select-screen.js"></script>
+		<script type="text/javascript" src="screens/backdrop-select-screen.js"></script>
+		<script type="text/javascript" src="screens/regular-question-screen.js"></script>
+		<script type="text/javascript" src="screens/graph-question-screen.js"></script>
+		<script type="text/javascript" src="screens/failure-screen.js"></script>
+		<script type="text/javascript" src="screens/success-screen.js"></script>
+		<script type="text/javascript" src="render.js"></script>
+		<script type="text/javascript" src="graphics.js"></script>
+		<script type="text/javascript" src="timer.js"></script>
+		<script type="text/javascript" src="facts.js"></script>
+		<script type="text/javascript" src="questions.js"></script>
+		<script type="text/javascript" src="program.js"></script>
+		<link type="text/css" rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<!-- Start Screen -->
+		<div id="start-screen" style="display:none">
+			<h1 id="Mytitle">THE MECHANICS CHALLENGE</h1>
+			<div id="start-button"></div>
+			<br/>
+			By Kofi Boadu
+		</div>
+
+		
+		<!-- Vehicle Select Screen
+		seperating individual tags into divs 
+		loading images
+		giving id tags to be referenced by scripts -->
+		<div id="vehicle-select-screen" style="display:none">
+			<h2>Select a vehicle</h2>
+			<div id="vehicle-1">
+				<img src="graphics/car.png" />
+				Car: mass = 4500 kg
+			</div>
+			<div id="vehicle-2">
+				<img src="graphics/truck.png" />
+				Truck: mass = 6350 kg
+			</div>
+			<div id="vehicle-3">
+				<img src="graphics/motorcycle.png" />
+				Motorcycle: mass = 1800 kg
+			</div>
+			<div id="vehicle-4">
+				<img src="graphics/bicycle.png" />
+				Bicycle: mass = 68 kg
+			</div>
+		</div>
+
+		
+		<!-- Backdrop Select Screen 
+		seperating individual tags into divs 
+		loading images
+		giving id tags to be referenced by scripts-->
+		<div id="backdrop-select-screen" style="display:none">
+			<h2>Select a backdrop to begin</h2>
+			<div id="backdrop-1"><img src ="graphics/mountains.png"> Mountains,COF = 0</div><br></br>
+			<div id="backdrop-2"><img src ="graphics/desert.png">Desert,COF = 0.3</div><br></br>
+			<div id="backdrop-3"><img src="graphics/city.png">City, COF = 0.4</div><br></br>
+			<div id="backdrop-4"><img src="graphics/forest.png"> Forest, COF = 0.7</div>
+		</div>
+
+		<!-- Regular Question Screen -->
+		<div id="regular-question-screen" style="display:none">
+			<div class="question-diagram">
+				<div>
+                    <!-- displays timer
+					displays play pause
+					regular question play pause
+					 tags to be referenced -->
+					<div id="regular-question-timer" class="timer">1:30</div>
+					<div id="regular-question-play-pause" class="play-pause"></div>
+				</div>
+                <!-- sets the size of the area where questions are asked-->
+				<canvas id="regular-question-canvas" width="400" height="400"></canvas>
+				m = <span id="regular-question-mass"></span> kg, &mu; = <span id="regular-question-mu"></span>, &theta; = <span id="regular-question-theta"></span>&deg;
+			</div>
+            <!-- question format:
+				heading
+				question text
+
+				answer:  (answerunit)
+			-->
+			<div class="question-text">
+				<h2>Question <span id="regular-question-number"></span></h2>
+				<span id="regular-question-text"></span><br/>
+				<br/>
+				<span id="regular-question-answer-name"></span> = <input id="regular-question-answer" type="text" /><span id="regular-question-answer-unit"></span> (2d.p.)<br/>
+				<br/>
+				<input id="regular-question-submit" type="button" value="Submit" />
+			</div>
+		</div>
+
+		<!-- Graph Question Screen -->
+		<div id="graph-question-screen" style="display:none">
+			<div class="question-diagram">
+				<div>
+                    <!-- displays timer
+					displays play pause
+					graph question play pause
+					 tags to be referenced -->
+					<div id="graph-question-timer" class="timer">1:30</div>
+					<div id="graph-question-play-pause" class="play-pause"></div>
+				</div>
+                <!-- sets the size of the area where questions are asked-->
+				<canvas id="graph-question-canvas" width="400" height="400"></canvas>
+				m = <span id="graph-question-mass"></span> kg, &mu; = <span id="graph-question-mu"></span>, &theta; = <span id="graph-question-theta"></span>&deg;
+			</div>
+			<div class="question-text">
+                	<!-- question format
+				heading
+				question text
+				
+				graph image
+
+				answer:  (answerunit)
+			-->
+				<h2>Question <span id="graph-question-number"></span></h2>
+				<span id="graph-question-text"></span><br/>
+				<br/>
+				This question isn't functioning yet. Click continue to move to the next question.<br/>
+				<br/>
+				<input id="graph-question-submit" type="button" value="Continue" />
+			</div>
+		</div>
+
+		<!-- Failure Screen -->
+		<div id="failure-screen" style="display:none">
+			<img src="graphics/game-over.png.jpg"/>
+		</div>
+
+		<!-- Success Screen -->
+		<div id="success-screen" style="display:none">
+			<img src="graphics/success-screen.png.jpg"/>
+		</div>
+	</body>
+</html>
