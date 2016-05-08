@@ -12,6 +12,7 @@ the variables beneath these are tags obtained from the index.html
 	var graphQuestionScreenDiv = document.getElementById('graph-question-screen');
 	var failureScreenDiv = document.getElementById('failure-screen');
 	var successScreenDiv = document.getElementById('success-screen');
+	var helpScreenDiv = document.getElementById('help-screen');
 
 	var leave = (function(){});//this is a function executed when we need to close/edit a window or canvas of somekind
 
@@ -131,6 +132,17 @@ an initialiser for the function
 
 		leave = function() {
 			successScreenDiv.style.display = 'none';
+		};
+	};
+
+	program.goToHelpScreen = function() {
+		leave();
+
+		helpScreen.show();
+		helpScreenDiv.style.display = 'block';
+
+		leave = function() {
+			helpScreenDiv.style.display = 'none';
 		};
 	};
 

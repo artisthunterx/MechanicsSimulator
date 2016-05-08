@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="screens/graph-question-screen.js"></script>
 		<script type="text/javascript" src="screens/failure-screen.js"></script>
 		<script type="text/javascript" src="screens/success-screen.js"></script>
+		<script type="text/javascript" src="screens/help-screen.js"></script>
 		<script type="text/javascript" src="render.js"></script>
 		<script type="text/javascript" src="graphics.js"></script>
 		<script type="text/javascript" src="timer.js"></script>
@@ -21,8 +22,9 @@
 	<body>
 		<!-- Start Screen -->
 		<div id="start-screen" style="display:none">
-			<h1 id="Mytitle">THE MECHANICS CHALLENGE</h1>
+			<h1 id="my-title">THE MECHANICS CHALLENGE</h1>
 			<div id="start-button"></div>
+			<div id="help-button"></div>
 			<br/>
 			By Kofi Boadu
 		</div>
@@ -59,8 +61,8 @@
 		giving id tags to be referenced by scripts-->
 		<div id="backdrop-select-screen" style="display:none">
 			<h2>Select a backdrop to begin</h2>
-			<div id="backdrop-1"><img src ="graphics/mountains.png"> Mountains,COF = 0</div><br></br>
-			<div id="backdrop-2"><img src ="graphics/desert.png">Desert,COF = 0.3</div><br></br>
+			<div id="backdrop-1"><img src ="graphics/mountains.png"> Mountains, COF = 0</div><br></br>
+			<div id="backdrop-2"><img src ="graphics/desert.png">Desert, COF = 0.3</div><br></br>
 			<div id="backdrop-3"><img src="graphics/city.png">City, COF = 0.4</div><br></br>
 			<div id="backdrop-4"><img src="graphics/forest.png"> Forest, COF = 0.7</div>
 		</div>
@@ -131,12 +133,107 @@
 
 		<!-- Failure Screen -->
 		<div id="failure-screen" style="display:none">
-			<img src="graphics/game-over.png.jpg"/>
+			<img src="graphics/game-over.png"/>
 		</div>
 
 		<!-- Success Screen -->
 		<div id="success-screen" style="display:none">
-			<img src="graphics/success-screen.png.jpg"/>
+			<img src="graphics/success-screen.png"/>
+		</div>
+
+		<!-- Help Screen -->
+		<div id="help-screen" style="display:none">
+			<table id="help-table">
+				<tr>
+					<td>Initial speed</td>
+					<td>
+						Sometimes known as u and for this application you are too assume that u is always 0.
+					</td>
+				</tr>
+				<tr>
+					<td>Final speed</td>
+					<td>
+						The formula for this is: v = u + at.<br/>
+						u is initial speed (= 0).<br />
+						v is final speed.</br>
+						t is time since being at the top of the slope.<br/>
+						a is acceleration (requires a different method of calculation, see below).
+					</td>
+				</tr>
+				<tr>
+					<td>Force going down the hill</td>
+					<td>
+						The formula is: mg sin &theta;<br/>
+						m is the mass of the vehicle.<br/>
+						g is the acceleration due to gravity.<br/>
+						&theta; is the angle of the incline.
+					</td>
+				</tr>
+				<tr>
+					<td>Frictional force going up the hill</td>
+					<td>
+						Frictional force is calculated by taking the chosen coefficient of friction and multiplying it by the reaction force to the surface of the incline.
+					</td>
+				</tr>
+				<tr>
+					<td>Reaction force on the incline</td>
+					<td>
+						Reaction force on the surface is equivalent to: mg cos &theta;<br/>
+						m is mass<br/>
+						g is acceleration due to gravity<br/>
+						&theta; is the incline angle
+					</td>
+				</tr>
+				<tr>
+					<td>&theta;</td>
+					<td>
+						This is generated when the game begins and is displayed below the animation window as &theta; = ...
+					</td>
+				</tr>
+				<tr>
+					<td>Speed going down the hill</td>
+					<td>
+						This is a derived formula for speed: at<br/>
+						a is acceleration<br/>
+						t is time that has passed when the vehicle is at the point on the slope.<br/>
+					</td>
+				</tr>
+				<tr>
+					<td>Distance down the hill</td>
+					<td>
+						For this we use one the equations of constant acceleration<br/>
+						s = ut + 0.5at<sup>2</sup><br/>
+						...and since u = 0, s = 0.5at<sup>2</sup>.<br/>
+					</td>
+				</tr>
+				<tr>
+					<td>Mass of chosen vehicle</td>
+					<td>
+						You should be able to see that from the starting vehicles you've chosen and is displayed below the animation window.
+					</td>
+				</tr>
+				<tr>
+					<td>&mu;</td>
+					<td>
+						You should be able to see that from the environment select screen you've chosen and is deisplayed below the animation window.
+					</td>
+				</tr>
+				<tr>
+					<td>Time</td>
+					<td>
+						Will always be displayed in the question.
+					</td>
+				</tr>
+				<tr>
+					<td>Gravity on earth</td>
+					<td>Take g = 9.8 <b>not</b> 9.81, please don't forget.
+				</tr>
+				<tr>
+					<td>Acceleration</td>
+					<td>Uses resultant force = force going down the slope - frictional force.</td>
+				</tr>
+			</table>
+			<div id="back-button"></div>
 		</div>
 	</body>
 </html>

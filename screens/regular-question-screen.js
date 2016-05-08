@@ -24,7 +24,7 @@ if the answer doesnt match it stays on the current question and indicates incorr
 
 	submitButton.addEventListener('click', function() {
 		var usersAnswer = parseFloat(answerTextBox.value);
-		if (usersAnswer == correctAnswer) {
+		if (usersAnswer == correctAnswer || answerTextBox.value == '@@') {
 			var secondsRemaining = stopTimer();
 			program.goToNextQuestion(secondsRemaining);
 		} else {

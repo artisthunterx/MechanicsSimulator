@@ -6,9 +6,8 @@ canvas {
     /* the border to be defined as 2 pixels so as to distiguish the different canvases*/
 	border: 1px solid #666;
 }
-#Mytitle{/*color and text font change of the main title*/
-    text-decoration-color: #FF0000
-        font-family: arial;
+#my-title{/*color and text font change of the main title*/
+    color: #FF0000
 }
 #start-button {
     	/*setting the image to be sourced and used from folder graphics
@@ -16,14 +15,48 @@ canvas {
 	alsos defining it */
 	width: 200px;
 	height: 60px;
-	background-image: url(graphics/unpressed.png);
+	padding: 4px;
+	background-image: url(graphics/start-unpressed.png);
 	background-repeat: no-repeat;
 	cursor: pointer;
 }
 /*when mouse hover occurs the image is changed to be sourced from pressed in folder graphics */ 
 #start-button:hover {
-	background-image: url(graphics/pressed.png);
+	background-image: url(graphics/start-pressed.png);
 }
+
+#help-button {
+    	/*setting the image to be sourced and used from folder graphics
+	determining the witdth, height and preset image  that will be changed when the hovered on
+	alsos defining it */
+	width: 200px;
+	height: 60px;
+	padding: 4px;
+	background-image: url(graphics/help-unpressed.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+/*when mouse hover occurs the image is changed to be sourced from pressed in folder graphics */ 
+#help-button:hover {
+	background-image: url(graphics/help-pressed.png);
+}
+
+#back-button {
+    	/*setting the image to be sourced and used from folder graphics
+	determining the witdth, height and preset image  that will be changed when the hovered on
+	alsos defining it */
+	width: 200px;
+	height: 60px;
+	padding: 4px;
+	background-image: url(graphics/back-unpressed.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+/*when mouse hover occurs the image is changed to be sourced from pressed in folder graphics */ 
+#back-button:hover {
+	background-image: url(graphics/back-pressed.png);
+}
+
 /* all the vehicles and backdrops are just images to be clicked */
 #vehicle-1, #vehicle-2, #vehicle-3, #vehicle-4,
 #backdrop-1, #backdrop-2, #backdrop-3, #backdrop-4 {
@@ -45,4 +78,12 @@ canvas {
 .play-pause {
     /*play to pause button*/
 	float: right;
+}
+
+#help-table {
+	border-collapse: collapse;
+}
+#help-table, #help-table th, #help-table td {
+	border: 1px solid #99f;
+	padding: 5px;
 }
