@@ -9,19 +9,37 @@ window.addEventListener('load', function() {
 	var canvas = document.getElementById('graph-question-canvas');
 	var numberSpan = document.getElementById('graph-question-number');
 	var textSpan = document.getElementById('graph-question-text');
-	var submitButton = document.getElementById('graph-question-submit');
 	var mass = document.getElementById('graph-question-mass');
 	var coefficientOfFriction = document.getElementById('graph-question-mu');
 	var inclineAngle = document.getElementById('graph-question-theta');
 	var stopTimer;
 	var correctAnswer;
+
+	var displacementButton = document.getElementById('graph-answer-displacement');
+	var velocityButton = document.getElementById('graph-answer-velocity');
+	var accelerationButton = document.getElementById('graph-answer-acceleration');
 /*a function that predicates on a button being clicked 
 compares the answer given withe calculated answer by the program
 if correct move onto the next 
 	if not stay on the current question and let the browser alert them there is a mistake */
-	submitButton.addEventListener('click', function() {
-		var usersAnswer = correctAnswer; // TODO: make graphs work
-		if (usersAnswer == correctAnswer) {
+	displacementButton.addEventListener('click', function() {
+		if (correctAnswer == 'Displacement') {
+			var secondsRemaining = stopTimer();
+			program.goToNextQuestion(secondsRemaining);
+		} else {
+			alert('Wrong answer!');
+		}
+	});
+	velocityButton.addEventListener('click', function() {
+		if (correctAnswer == 'Velocity') {
+			var secondsRemaining = stopTimer();
+			program.goToNextQuestion(secondsRemaining);
+		} else {
+			alert('Wrong answer!');
+		}
+	});
+	accelerationButton.addEventListener('click', function() {
+		if (correctAnswer == 'Acceleration') {
 			var secondsRemaining = stopTimer();
 			program.goToNextQuestion(secondsRemaining);
 		} else {

@@ -65,8 +65,6 @@ questionGenerators.push(function(selectedVehicle, selectedBackdrop, inclineAngle
 	return {
 		questionType: 'graph',
 		questionText: 'What does the area under the following graph represent?',
-		graph: 'graphics/graph.png',
-		options: [ 'Acceleration', 'Velocity', 'Displacement' ],
 		answer: 'Displacement'
 	};
 });
@@ -75,8 +73,6 @@ questionGenerators.push(function(selectedVehicle, selectedBackdrop, inclineAngle
 	return {
 		questionType: 'graph',
 		questionText: 'What does the gradient of the following graph represent?',
-		graph: 'graphics/graph.png',
-		options: [ 'Acceleration', 'Velocity', 'Displacement' ],
 		answer: 'Acceleration'
 	};
 });
