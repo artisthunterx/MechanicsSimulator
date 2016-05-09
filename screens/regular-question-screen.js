@@ -42,7 +42,7 @@ if the answer doesnt match it stays on the current question and indicates incorr
 		coefficientOfFriction.innerHTML = coefficientsOfFriction[program.selectedBackdrop];//displayingthe coefficient of friction
 		inclineAngle.innerHTML = program.inclineAngle;
 //triggering the animation to set of given the game timer has started
-		renderSimulation(canvas, program.selectedVehicle, program.selectedBackdrop, program.inclineAngle, 0.2);
+		renderSimulation(canvas, program.selectedVehicle, program.selectedBackdrop, program.inclineAngle, 0.8);
 
 		stopTimer = timer.startTimer(timerDiv, secondsRemaining, function() {
             //condition to stop the game and go to the failiure screen

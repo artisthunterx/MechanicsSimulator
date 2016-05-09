@@ -52,9 +52,9 @@ if correct move onto the next
 		textSpan.innerHTML = question.questionText;// displaying the question on screen
 		mass.innerHTML = masses[program.selectedVehicle];//displaying mass on stage
 		coefficientOfFriction.innerHTML = coefficientsOfFriction[program.selectedBackdrop];//dsiplaying coefficients of friction on stage
-		inclineAngle.innerHTML = program.inclineAngle;//displaying incline ange on the stage
+		inclineAngle.innerHTML = program.inclineAngle;//displaying incline angle on the stage
 //signaling the animation after being triggered
-		renderSimulation(canvas, program.selectedVehicle, program.selectedBackdrop, program.inclineAngle, 0.2);
+		renderSimulation(canvas, program.selectedVehicle, program.selectedBackdrop, program.inclineAngle, 0.8);
 //using in built function(.startTimer) to trigger when the time is up to go the failiure screen of the game
 		stopTimer = timer.startTimer(timerDiv, secondsRemaining, function() {
 			program.goToFailureScreen();
